@@ -10,9 +10,9 @@ on:
       tags:
         description: 'Test scenario tags'
   push:
-    branches: [ "master" ]
+    branches: [ "m2p-4.4-v1.0" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "m2p-4.4-v1.0" ]
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: build
-      run: git pull && ./build.sh BPI-M2Z-720P 1
+      run: git pull && git checkout m2p-4.4-v1.0 && ./build.sh BPI-M2Z-720P 1
 #     - name: configure
 #       run: ./configure
 #     - name: make
