@@ -1,6 +1,6 @@
 name: C/C++ CI
 
-on: watch
+on: workflow_dispatch
 #   push:
 #     branches: [ "master" ]
 #   pull_request:
