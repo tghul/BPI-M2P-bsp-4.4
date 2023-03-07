@@ -4,7 +4,8 @@
 
 include chosen_board.mk
 
-CROSS_COMPILE=$(COMPILE_TOOL)/arm-linux-gnueabihf-
+ROSS_COMPILE=$(COMPILE_TOOL)/arm-linux-gnueabihf-
+HOSTCFLAGS += -fcommon
 U_CROSS_COMPILE=$(CROSS_COMPILE)
 K_CROSS_COMPILE=$(CROSS_COMPILE)
 
