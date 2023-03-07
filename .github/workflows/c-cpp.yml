@@ -17,8 +17,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: build
-      run: git pull && ./build.sh BPI-M2Z-720P 1
+    - name: Build
+      run: |
+        sudo apt-get install u-boot-tools
+        git pull
+        git checkout tghul-patch-1
+        ./build.sh BPI-M2Z-720P 1
+
     - name: Release   
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
