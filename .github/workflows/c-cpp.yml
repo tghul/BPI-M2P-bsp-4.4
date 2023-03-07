@@ -23,6 +23,11 @@ jobs:
     - uses: actions/checkout@v3
     - name: build
       run: git pull && ./build.sh BPI-M2Z-720P 1
+    - name: Release   
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with: 
+        files: README.md
 #     - name: configure
 #       run: ./configure
 #     - name: make
