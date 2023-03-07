@@ -90,7 +90,9 @@ tar_packages()
   (cd $ROOT ; mv ${ROOT}/net lib/modules/${KERNEL_MODULES}/kernel/net)
 
   (cd $ROOT ; tar czvf ${TOPDIR}/SD/${board}/${KERNEL_HEADERS}.tgz usr/src/${KERNEL_HEADERS})
-  (cd $ROOT ; tar czvf ${TOPDIR}/SD/${board}/BOOTLOADER-${board}-linux4.4.tgz usr/lib/u-boot/bananapi)
+  (cd $ROOT ; tar czvf ${TOPDIR}/SD/${board}/BOOTLOADER-${board}-linux4.4.tgz $TOPDIR)
+  echo "tar download packages finished"
+  (cd $TOPDIR ; ls)
 }
 
 pack_bootloader
