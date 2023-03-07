@@ -1,0 +1,21 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "tghul-patch-1" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Build
+      run: |
+        sudo apt-get install u-boot-tools
+        ./build.sh BPI-M2Z-720P 1
+        ls
+        ls SD
+        ls /usr/lib/u-boot/bananapi/
