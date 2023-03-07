@@ -9,10 +9,6 @@ on:
         default: 'warning'
       tags:
         description: 'Test scenario tags'
-  push:
-    branches: [ "m2p-4.4-v1.0" ]
-  pull_request:
-    branches: [ "m2p-4.4-v1.0" ]
 
 jobs:
   build:
@@ -27,7 +23,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
       with: 
-        files: README.md
+        files: out/100MB/BPI-M2Z-720P-linux4.4-8k.img
 #     - name: configure
 #       run: ./configure
 #     - name: make
